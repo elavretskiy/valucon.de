@@ -101,7 +101,7 @@ Rails.application.configure do
   Rails.application.config.middleware.use ExceptionNotification::Rack,
                                           email: {
                                             email_prefix: '[ERRORS] ',
-                                            sender_address: %{ 'errors' <errors@upper.herokuapp.com> },
+                                            sender_address: %{ 'errors' <errors@valucon.herokuapp.com> },
                                             exception_recipients: %w(e.lavretskiy@gmail.com)
                                           }
 
