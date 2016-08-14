@@ -7,9 +7,9 @@ class Admin::BaseController < ApplicationController
     return if current_user.present?
     msg = 'Ошибка авторизации'
     respond_to do |format|
-      format.html { redirect_to new_admin_session_path, alert: msg }
+      format.html { redirect_to new_admin_session_path }
       format.json {
-        render json: { msg: msg, redirect_to: 'new_admin_session_path' },
+        render json: { msg: msg, redirect_to: 'new_admin_session_path', reload: true },
                status: 401
       }
     end

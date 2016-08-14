@@ -4,8 +4,6 @@ app.controller 'AdminSessionsCtrl', [
   (Model, action) ->
     ctrl = this
 
-    $('.loading').show()
-
     action 'new', ->
       ctrl.user = Model.new()
       ctrl.save = Model.create

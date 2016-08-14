@@ -1,6 +1,7 @@
 class Admin::SessionsController < Admin::BaseController
   skip_before_action :authorize?, only: [:new, :create]
   before_action :set_user, only: [:create]
+  before_action :authorized?
 
   add_breadcrumb 'Авторизация', :new_admin_session_path
 
@@ -37,12 +38,18 @@ class Admin::SessionsController < Admin::BaseController
   end
 
   def failure_create_respond_to(format)
-    msg = 'Ошибка авторизации. Проверьте правильность введенных данных'
+    @user ||= User.new(user_params)
+    @user.valid?
+    msg = 'Проверьте правильность введенных данных'
     format.html { render :new, alert: msg }
-    format.json {
-      @user ||= User.new(user_params)
-      @user.valid?
-      render json: { errors: @user.errors, msg: msg }, status: 401
-    }
+    format.json { render json: { errors: @user.errors, msg: msg }, status: 401 }
+  end
+
+  def authorized?
+    return if current_user.blank?
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.json { render json: { redirect_to: 'root_path' } }
+    end
   end
 end

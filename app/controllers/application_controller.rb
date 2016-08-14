@@ -12,13 +12,7 @@ class ApplicationController < ActionController::Base
 
   add_breadcrumb 'Главная', :root_path
 
-  layout proc {
-    if request.xhr?
-      'content_wrapper'
-    else
-      'admin_lte_2'
-    end
-  }
+  layout proc { request.xhr? ? 'content_wrapper' : 'admin_lte_2' }
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
