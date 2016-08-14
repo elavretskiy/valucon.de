@@ -1,4 +1,6 @@
 class Admin::BaseController < ApplicationController
+  inherit_resources
+
   before_action :authorize?
 
   def authorize?
