@@ -52,7 +52,7 @@ ru:
         role: Роль
         id: ID
       task:
-        id: Идентификатор
+        id: ID
         name: Название
         description: Описание
         state: Состояние

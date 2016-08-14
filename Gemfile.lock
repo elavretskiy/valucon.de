@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/carrierwaveuploader/carrierwave.git
-  revision: 44cfb7c01c22e0168d362001a7bb3c528c805315
+  revision: 857d091866234cddc74db5971c1be60be16e3540
   specs:
     carrierwave (0.11.0)
       activemodel (>= 4.0.0)
@@ -53,7 +53,7 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
     arel (6.0.3)
-    autoprefixer-rails (6.4.0.1)
+    autoprefixer-rails (6.4.0.2)
       execjs
     awesome_print (1.7.0)
     bcrypt (3.1.11)
@@ -132,7 +132,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    oj (2.17.1)
+    oj (2.17.2)
     oj_mimic_json (1.0.1)
     oxymoron (1.0.2)
       awesome_print
