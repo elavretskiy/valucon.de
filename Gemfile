@@ -56,7 +56,6 @@ gem 'faker'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'state_machines-activerecord'
-gem 'faker'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'angularjs-file-upload-rails'
 gem 'validates_email_format_of'
