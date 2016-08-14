@@ -1,0 +1,42 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательное поле'
+      mark: '*'
+    error_notification:
+      default_message: "Пожалуйста, ознакомьтесь с проблемами ниже:"
+    options:
+      task:
+        mark:
+          task: Задача
+          finance: Финансы
+          comment: Комментарий
+          information: Информация
+          arrangement: Договоренность
+          other: Другое
+        label:
+          basic: Договорная
+          bug: Ошибка
+          free: Бесплатная
+          additional: Дополнительная
+          service: Служебная
+        user_work:
+          architecture: Архитектура
+          pattern: Шаблоны
+          js: JavaScript
+          css: CSS
+          server: Сервер
+          web: Web
+      payment:
+        method:
+          western: WesternUnion
+          paypal: PayPal
+          cashless_individual: Безналичный ИП
+          cashless_private: Безналичный частный
+          cash: Наличный
+          other: Другой
+        direction:
+          input: Входящий
+          output: Исходящий

@@ -1,0 +1,18 @@
+.nav-tabs-custom.information
+  ul.nav.nav-tabs
+    li.active
+      a data-toggle="tab" href="#tab_1" ng-click='ctrl.reload()'  Информация
+    li
+      a data-toggle="tab" href="#tab_2"  Загрузки
+  .tab-content
+    #tab_1.tab-pane.active
+      = page_display_field model, :id
+      = page_display_field model, :name
+      = page_display_field model, :description
+      = page_display_field model, :state, { translate: true }
+      = page_display_field model, :created_at,
+        { datetime: { format: 'dd.MM.yyyy HH:mm' } }
+      = page_display_field model, :user_id, { as: :field, join: :user, field: :email }
+      = render 'admin/tasks/uploads/index'
+    #tab_2.tab-pane
+      = render 'admin/uploads/form', ng_controller: 'TaskUploadsController'

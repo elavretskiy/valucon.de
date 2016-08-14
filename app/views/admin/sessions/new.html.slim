@@ -1,0 +1,8 @@
+.row
+  .col-md-6.col-md-offset-3
+    = simple_form_for @user, url: admin_sessions_path do |f|
+      h4.text-center Авторизация
+      = simple_group_field f, :email, { permit: true }
+      = simple_group_field f, :password, { permit: true, value: @user.password }
+      .form-group
+        = f.button :submit, 'Войти', class: 'btn btn-default'

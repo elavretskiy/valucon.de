@@ -1,0 +1,29 @@
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: valucon_test
+  pool:     5
+  username:
+  password:
+  template: template0
+
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: valucon_development
+  pool:     5
+  username:
+  password:
+  template: template0
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: valucon_production
+  pool:     5
+  username:
+  password:
+  template: template0

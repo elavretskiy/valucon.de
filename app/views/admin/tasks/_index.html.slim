@@ -1,0 +1,22 @@
+tr
+  = page_display_th model, :id
+  th
+  = page_display_th model, :name
+  = page_display_th model, :description
+  = page_display_th model, :state
+  = page_display_th model, :created_at
+  = page_display_th model, :user_id
+  th
+tr ng-repeat='task in ctrl.tasks.collection | filter:search track by $index'
+  = page_display_td model, :id
+  = pundit_show_btn model, :admin
+  = page_display_td model, :name
+  = page_display_td model, :description
+  td
+    = page_display_info model, :state, { translate: true }
+    = task_state_link
+  = page_display_td model, :created_at,
+    { datetime: { format: 'dd.MM.yyyy HH:mm' } }
+  = page_display_link model, :user_id,
+    { join: :user, field: :email, as: :field }
+  = pundit_table_actions_btn model, :admin

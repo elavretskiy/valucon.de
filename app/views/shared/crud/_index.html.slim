@@ -1,0 +1,6 @@
+- page_headers model
+- name_space ||= nil
+- path = namespace_path(model, name_space)
+
+- index = render "#{path}/index", model: model
+= render 'shared/boxes/index', model: model, index: index, name_space: name_space

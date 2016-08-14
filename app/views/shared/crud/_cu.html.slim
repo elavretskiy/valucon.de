@@ -1,0 +1,6 @@
+- page_headers model
+- name_space ||= nil
+- path = namespace_path(model, name_space)
+
+- form = render "#{path}/form", model: model
+= render 'shared/boxes/form', model: model, form: form, name_space: name_space

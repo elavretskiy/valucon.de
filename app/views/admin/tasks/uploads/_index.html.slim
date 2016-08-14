@@ -1,0 +1,16 @@
+.row.upload-name ng-repeat='upload in ctrl.task.uploads track by $index' ng-if='!ctrl.isImage(upload.url)'
+  hr
+  .col-md-1
+    = page_remove_upload
+  .col-md-11
+    a.upload-name ng-href="{{upload.url}}" target='_blank' ng-bind='ctrl.uploadName(upload.url)'
+    br
+
+.row ng-repeat='upload in ctrl.task.uploads track by $index' ng-if='ctrl.isImage(upload.url)'
+  hr
+  .col-md-1
+    = page_remove_upload
+  .col-md-11
+    a ng-href="{{upload.url}}" target='_blank'
+      img.img-responsive ng-src="{{upload.url}}"
+    br

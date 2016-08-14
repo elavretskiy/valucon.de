@@ -1,0 +1,13 @@
+- name_space ||= nil
+= pundit_new_btn(model, name_space)
+= render 'shared/boxes/filter', model: model, name_space: name_space
+
+.box
+  .box-header.with-border.clearfix ng-if=page_pagination_show?(model)
+    = page_pagination(model)
+  .box-body.table-responsive
+    table.table.table-bordered.table-hover
+      tbody
+        = index
+  .box-footer.clearfix ng-if=page_pagination_show?(model)
+    = page_pagination(model)

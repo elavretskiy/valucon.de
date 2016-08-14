@@ -1,0 +1,12 @@
+tr
+  = page_display_th model, :id, { permit: true }
+  = page_display_th model, :created_at, { permit: true }
+  = page_display_th model, :name, { permit: true }
+  = page_display_th model, :user_id, { permit: true }
+tr ng-repeat='task in ctrl.tasks.collection | filter:search'
+  = page_display_td model, :id, { permit: true }
+  = page_display_td model, :created_at,
+    { permit: true, datetime: { format: 'dd.MM.yyyy HH:mm' } }
+  = page_display_td model, :name, { permit: true }
+  = page_display_link model, :user_id,
+    { permit: true, join: :user, field: :email, as: :field }

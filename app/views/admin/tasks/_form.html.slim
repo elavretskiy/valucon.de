@@ -1,0 +1,9 @@
+= simple_form_for resource do |f|
+  = simple_group_field f, :name
+  = simple_group_field f, :description
+  = simple_group_field f, :system_id, { label: 'Системный ID (Номер учетной записи на странице profile.onliner.by)' }
+  = simple_group_field f, :user_id,
+    { as: :association,
+      collection: User.all,
+      label_method: :email }
+  = f.submit 'Сохранить', class: 'btn btn-primary'

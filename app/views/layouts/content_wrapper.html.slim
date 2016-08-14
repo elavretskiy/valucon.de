@@ -1,0 +1,10 @@
+section.content-header
+  h1
+    = yield :page_header
+    small
+      = yield :page_header_small
+  = page_breadcrumbs
+
+section.content
+  = render 'shared/notice_alert_msg'
+  = yield

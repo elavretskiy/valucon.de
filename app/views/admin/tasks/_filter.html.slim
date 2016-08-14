@@ -1,0 +1,16 @@
+.nav-tabs-custom.page-filter
+  br
+  ul.nav.nav-tabs
+    li.active
+      a data-toggle="tab" href="#tab_1" ng-click=page_filter_ng_click(model, '{ by_state: all }')  Все
+    li
+      a data-toggle="tab" href="#tab_2" ng-click=page_filter_ng_click(model, "{ by_state: 'new' }")  Новая
+    li
+      a data-toggle="tab" href="#tab_3" ng-click=page_filter_ng_click(model, "{ by_state: 'started' }")  Начата
+    li
+      a data-toggle="tab" href="#tab_4" ng-click=page_filter_ng_click(model, "{ by_state: 'finished' }")  Выполнена
+  .tab-content
+    #tab_1.tab-pane.active
+    #tab_2.tab-pane
+    #tab_3.tab-pane
+    #tab_4.tab-pane

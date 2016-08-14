@@ -1,0 +1,63 @@
+ru:
+  boolean:
+    "true": Да
+    "false": Нет
+    "1": Да
+    "0": Нет
+  roles:
+    is_admin: Админ
+    is_user: Пользователь
+    is_license: Лицензия
+  states:
+    new: Новая
+    started: В работе
+    finished: Выполнена
+  flash:
+    actions:
+      create:
+        notice: Запись успешно сохранена
+      update:
+        notice: Запись успешно обновлена
+      destroy:
+        notice: Запись успешно удалена
+        alert: Запись не может быть удалена
+  activerecord:
+    errors:
+      models:
+        task:
+          attributes:
+            state_event:
+              invalid_event: имеет не верное событие
+    successful:
+      messages:
+        created: Запись успешно сохранена
+        updated: Запись успешно обновлена
+        destroyed: Запись успешно удалена
+    models:
+      user:
+        one: Пользователь
+        few: Пользователя
+        many: Пользователи
+        other: Пользователей
+      task:
+        one: Задача
+        few: Задачи
+        many: Задачи
+        other: Задач
+    attributes:
+      user:
+        email: E-mail
+        password_digest: Пароль
+        password: Пароль
+        role: Роль
+        id: ID
+      task:
+        id: Идентификатор
+        name: Название
+        description: Описание
+        state: Состояние
+        user_id: Пользователь
+        created_at: Время создания
+        upload: Вложение
+        remove_upload: Удалить вложение
+        state_event: Состояние

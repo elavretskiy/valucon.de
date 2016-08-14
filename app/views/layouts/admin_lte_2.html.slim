@@ -1,0 +1,34 @@
+doctype html
+html ng-app='app'
+  head
+    base href="/"
+    meta charset="UTF-8"
+    title Upper | Dashboard
+    meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
+    link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css"
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    /! HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    /! WARNING: Respond.js doesn't work if you view the page via file://
+    /![if lt IE 9]
+      | <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script
+      | <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script
+    = csrf_meta_tags
+  body.skin-blue.sidebar-mini.action_name class="#{params[:controller].parameterize}"
+    .loading
+    .wrapper
+      = render partial: 'layouts/admin_lte_2_header'
+      = render partial: 'layouts/admin_lte_2_sidebar'
+      .content-wrapper
+        ui-view
+      footer.main-footer
+        /.pull-right.hidden-xs
+        /  | Anything you want
+        strong
+          | Copyright &copy; 2016
+          = ' '
+          a href="#" Upper
+          = '. '
+        | Все права защищены.
+      .control-sidebar-bg style=("position: fixed; height: auto;")

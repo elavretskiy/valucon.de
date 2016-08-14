@@ -1,0 +1,7 @@
+- name_space ||= nil
+- path = namespace_path(model, name_space)
+
+.box
+  .box-body
+    = page_search(model)
+    = render "#{path}/filter", model: model if lookup_context.find_all("#{path}/_filter").any?
