@@ -33,7 +33,7 @@ div ng-controller=ng_controller uploader='uploader' nv-file-drop='' id=resource.
               span.glyphicon.glyphicon-trash
   div
     div
-      | Загрузка:
+      | Загрузка
       .progress
         .progress-bar ng-style=("{ 'width': uploader.progress + '%' }") role='progressbar'
     button.btn.btn-success.btn-s.uploads-btn ng-click='uploader.uploadAll()' ng-disabled='!uploader.getNotUploadedItems().length' type='button'
