@@ -6,9 +6,9 @@ div ng-controller=ng_controller uploader='uploader' nv-file-drop='' id=resource.
         tr
           th width='50%' Название
           th ng-show='uploader.isHTML5' Размер
-          th ng-show='uploader.isHTML5' Прогресс
+          th ng-show='uploader.isHTML5' Загрузка
           th Статус
-          th Действия
+          th
       tbody
         tr ng-repeat='item in uploader.queue'
           td
@@ -33,7 +33,7 @@ div ng-controller=ng_controller uploader='uploader' nv-file-drop='' id=resource.
               span.glyphicon.glyphicon-trash
   div
     div
-      | Прогресс:
+      | Загрузка:
       .progress
         .progress-bar ng-style=("{ 'width': uploader.progress + '%' }") role='progressbar'
     button.btn.btn-success.btn-s.uploads-btn ng-click='uploader.uploadAll()' ng-disabled='!uploader.getNotUploadedItems().length' type='button'
