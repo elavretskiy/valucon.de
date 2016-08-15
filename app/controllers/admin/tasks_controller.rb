@@ -73,7 +73,7 @@ class Admin::TasksController < Admin::BaseController
   end
 
   def show_breadcrumb
-    add_breadcrumb Breadcrumbs.text(params), [:admin, @resource]
+    add_breadcrumb Breadcrumbs.text(params), admin_task_path(@resource)
   end
 
   def new_breadcrumb
