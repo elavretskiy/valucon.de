@@ -1,38 +1,36 @@
 div ng-controller=ng_controller uploader='uploader' nv-file-drop='' id=resource.id token=form_authenticity_token
   input nv-file-select='' type='file' uploader='uploader' options='{clearInputAfterAddedToQueue: true}' ng-disabled='uploader.isUploading'
-  table.table
-    thead
-      tr
-        th width='50%' Название
-        th ng-show='uploader.isHTML5' Размер
-        th ng-show='uploader.isHTML5' Прогресс
-        th Статус
-        th Действия
-    tbody
-      tr ng-repeat='item in uploader.queue'
-        td
-          strong ng-bind='item.file.name'
-        td ng-show='uploader.isHTML5' nowrap='' {{ item.file.size/1024/1024|number:2 }} MB
-        td ng-show='uploader.isHTML5'
-          .progress style=("margin-bottom: 0;")
-            .progress-bar ng-style=("{ 'width': item.progress + '%' }") role='progressbar'
-        td.text-center
-          span ng-show='item.isSuccess'
-            i.glyphicon.glyphicon-ok
-          span ng-show='item.isCancel'
-            i.glyphicon.glyphicon-ban-circle
-          span ng-show='item.isError'
-            i.glyphicon.glyphicon-remove
-        td nowrap=''
-          button.btn.btn-success.btn-xs.uploads-btn ng-click='item.upload()' ng-disabled=('item.isReady || item.isUploading || item.isSuccess') type='button'
-            span.glyphicon.glyphicon-upload
-            | Загрузить
-          button.btn.btn-warning.btn-xs.uploads-btn ng-click='item.cancel()' ng-disabled='!item.isUploading' type='button'
-            span.glyphicon.glyphicon-ban-circle
-            | Отменить
-          button.btn.btn-danger.btn-xs ng-click='item.remove()' type='button'
-            span.glyphicon.glyphicon-trash
-            | Удалить
+  .table-responsive
+    table.table
+      thead
+        tr
+          th width='50%' Название
+          th ng-show='uploader.isHTML5' Размер
+          th ng-show='uploader.isHTML5' Прогресс
+          th Статус
+          th Действия
+      tbody
+        tr ng-repeat='item in uploader.queue'
+          td
+            strong ng-bind='item.file.name'
+          td ng-show='uploader.isHTML5' nowrap='' {{ item.file.size/1024/1024|number:2 }} MB
+          td ng-show='uploader.isHTML5'
+            .progress style=("margin-bottom: 0;")
+              .progress-bar ng-style=("{ 'width': item.progress + '%' }") role='progressbar'
+          td.text-center
+            span ng-show='item.isSuccess'
+              i.glyphicon.glyphicon-ok
+            span ng-show='item.isCancel'
+              i.glyphicon.glyphicon-ban-circle
+            span ng-show='item.isError'
+              i.glyphicon.glyphicon-remove
+          td nowrap=''
+            button.btn.btn-success.btn-xs.uploads-btn ng-click='item.upload()' ng-disabled=('item.isReady || item.isUploading || item.isSuccess') type='button'
+              span.glyphicon.glyphicon-upload
+            button.btn.btn-warning.btn-xs.uploads-btn ng-click='item.cancel()' ng-disabled='!item.isUploading' type='button'
+              span.glyphicon.glyphicon-ban-circle
+            button.btn.btn-danger.btn-xs ng-click='item.remove()' type='button'
+              span.glyphicon.glyphicon-trash
   div
     div
       | Прогресс:
@@ -40,10 +38,10 @@ div ng-controller=ng_controller uploader='uploader' nv-file-drop='' id=resource.
         .progress-bar ng-style=("{ 'width': uploader.progress + '%' }") role='progressbar'
     button.btn.btn-success.btn-s.uploads-btn ng-click='uploader.uploadAll()' ng-disabled='!uploader.getNotUploadedItems().length' type='button'
       span.glyphicon.glyphicon-upload
-      | Загрузить все
+      |  Загрузить все
     button.btn.btn-warning.btn-s.uploads-btn ng-click='uploader.cancelAll()' ng-disabled='!uploader.isUploading' type='button'
       span.glyphicon.glyphicon-ban-circle
-      | Отменить все
+      |  Отменить все
     button.btn.btn-danger.btn-s ng-click='uploader.clearQueue()' ng-disabled='!uploader.queue.length' type='button'
       span.glyphicon.glyphicon-trash
-      | Удалить все
+      |  Удалить все
