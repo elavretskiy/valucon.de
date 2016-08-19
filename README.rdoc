@@ -1,6 +1,9 @@
 == Heroku
 https://valucon.herokuapp.com
 
+== Travis CI
+{<img src="https://travis-ci.org/elavretskiy/valucon.de.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/elavretskiy/valucon.de]
+
 == Описание потребностей
 Имплементировать веб приложение для управлением задач пользователя. Требования взяты из реальных проектов.
 
