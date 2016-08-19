@@ -7,6 +7,6 @@ addons:
   postgresql: '9.4'
 before_script:
   - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -c 'create database travis_valucon_test;' -U postgres
   - bundle exec rake db:migrate
 install: bundle install --jobs=3 --retry=3
