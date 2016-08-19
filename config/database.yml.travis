@@ -1,4 +1,4 @@
 test:
   adapter: postgresql
-  database: travis_valucon_test
+  database: valucon_test
   username: postgres
