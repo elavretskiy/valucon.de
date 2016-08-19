@@ -1,4 +1,4 @@
-module TaskHelper
+module TasksHelper
   def task_state_link
     params = { 'ng-class': 'ctrl.stateBtn(task.state)',
                'ng-click': 'ctrl.update(task.id,nil,ctrl.stateEvent(task.state),$index)',

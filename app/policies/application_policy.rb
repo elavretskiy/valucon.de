@@ -1,6 +1,7 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
+  # :nocov:
   def initialize(user, record)
     @user = user
     @record = record
@@ -50,4 +51,5 @@ class ApplicationPolicy
       scope
     end
   end
+  # :nocov:
 end

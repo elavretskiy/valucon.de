@@ -17,7 +17,7 @@ class Breadcrumbs
       model_name = model.model_name.to_s.underscore
       case params[:action]
       when 'index'
-        "#{model_name.plural}_path"
+        "#{model_name.pluralize}_path"
       when 'show'
         "#{model_name}_path"
       when 'edit', 'update'

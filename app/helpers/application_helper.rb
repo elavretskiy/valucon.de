@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # :nocov:
   def page_headers(model)
     page_header(model)
     page_header_small(model)
@@ -58,4 +59,5 @@ module ApplicationHelper
       "#{model.model_name.human count: 2}"
     end
   end
+  # :nocov:
 end

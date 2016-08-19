@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class UploadUploader < CarrierWave::Uploader::Base
+  # :nocov:
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -46,4 +47,6 @@ class UploadUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  # :nocov:
 end
+

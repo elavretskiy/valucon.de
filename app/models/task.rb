@@ -19,7 +19,7 @@ class Task < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :name, :state, presence: true
+  validates :name, :state, :user_id, presence: true
 
   state_machine initial: :new do
     event :to_started do

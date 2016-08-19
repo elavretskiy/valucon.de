@@ -1,4 +1,5 @@
 module PunditHelper
+  # :nocov:
   def pundit_new_btn(model, namespace = nil)
     resource = model_resource(model)
     params = { class: 'btn btn-success btn-sm',
@@ -112,4 +113,5 @@ module PunditHelper
   def not_permitted_field?(model, field, params)
     !(params[:permit] || pundit_permitted_attr?(model, field))
   end
+  # :nocov:
 end

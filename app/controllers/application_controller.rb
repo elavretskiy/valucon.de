@@ -14,12 +14,13 @@ class ApplicationController < ActionController::Base
 
   layout proc { request.xhr? ? 'content_wrapper' : 'admin_lte_2' }
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
   private
 
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  end
+
+  # :nocov:
   def user_not_authorized
     msg = 'У Вас недостаточно прав для выполнения данных действий'
     if request.xhr?
@@ -29,4 +30,5 @@ class ApplicationController < ActionController::Base
       redirect_to request.referrer || root_path
     end
   end
+  # :nocov:
 end

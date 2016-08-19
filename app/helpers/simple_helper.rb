@@ -1,4 +1,5 @@
 module SimpleHelper
+  # :nocov:
   def simple_group_field(f, field, params = {})
     content_tag :div, class: 'form-group' do
       simple_field(f, field, params)
@@ -123,4 +124,5 @@ module SimpleHelper
     ng_bind += " | #{params[:datetime][:type] || :date}:'#{params[:datetime][:format]}'" if params[:datetime]
     ng_bind
   end
+  # :nocov:
 end

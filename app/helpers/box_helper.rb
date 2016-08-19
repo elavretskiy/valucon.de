@@ -1,4 +1,5 @@
 module BoxHelper
+  # :nocov:
   def page_pagination_show?(model)
     collection = model_collection(model)
     "ctrl.#{collection}.total_count > ctrl.#{collection}.page_size"
@@ -67,4 +68,5 @@ module BoxHelper
     collection = model_collection(model)
     namespace.blank? ? model_collection(model) : "#{namespace}/#{collection}"
   end
+  # :nocov:
 end

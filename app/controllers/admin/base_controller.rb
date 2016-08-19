@@ -3,6 +3,8 @@ class Admin::BaseController < ApplicationController
 
   before_action :authorize?
 
+  private
+
   def authorize?
     return if current_user.present?
     msg = 'Ошибка авторизации'

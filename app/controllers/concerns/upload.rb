@@ -8,23 +8,14 @@ module Upload
     def create
       authorize @resource
       add_more_uploads([params[:file]])
-      respond_json
+      @resource.save
+      render json: @resource
     end
 
     private
 
     def set_resource
       @resource = policy_scope(@model).find(params[:task_id])
-    end
-
-    def respond_json
-      respond_to do |format|
-        if @resource.save
-          format.json { render json: @resource }
-        else
-          format.json { render json: @resource, status: 422 }
-        end
-      end
     end
 
     def add_more_uploads(new_uploads)

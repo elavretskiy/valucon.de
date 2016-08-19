@@ -3,7 +3,7 @@ tr
   th
   = page_display_th model, :name
   = page_display_th model, :description
-  = page_display_th model, :state
+  = page_display_th model, :state, { permit: true }
   = page_display_th model, :created_at
   = page_display_th model, :user_id
   th
@@ -13,7 +13,7 @@ tr ng-repeat='task in ctrl.tasks.collection | filter:search track by $index'
   = page_display_td model, :name
   = page_display_td model, :description
   td
-    = page_display_info model, :state, { translate: true }
+    = page_display_info model, :state, { translate: true, permit: true }
     = task_state_link
   = page_display_td model, :created_at,
     { datetime: { format: 'dd.MM.yyyy HH:mm' } }

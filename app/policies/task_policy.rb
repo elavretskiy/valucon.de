@@ -28,7 +28,7 @@ class TaskPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    base_params = [:id, :name, :description, :state, :remove_upload, :upload,
+    base_params = [:id, :name, :description, :remove_upload, :upload,
                    :state_event]
     admin_params = [:user_id]
     @user.try(:is_admin?) ? admin_params + base_params : base_params
@@ -36,16 +36,7 @@ class TaskPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      case true
-      when @user.blank?
-        Task.none
-      when @user.is_admin?
-        Task.all
-      when @user.is_user?
-        @user.tasks
-      else
-        Task.none
-      end
+      @user.is_admin? ? Task.all : @user.tasks
     end
   end
 end

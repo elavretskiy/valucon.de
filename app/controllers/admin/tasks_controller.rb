@@ -16,6 +16,13 @@ class Admin::TasksController < Admin::BaseController
     new!
   end
 
+  def create
+    @resource = current_user.tasks.new
+    authorize @resource
+    @resource.assign_attributes resource_params
+    create! { |success, failure| create_respond_json(success, failure) }
+  end
+
   def update
     authorize @resource
     remove_upload_at_index(params[:remove_upload])

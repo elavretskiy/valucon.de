@@ -7,6 +7,7 @@ module Resource
     before_action :set_model
     before_action :set_resource, only: [:show, :edit, :update, :destroy]
 
+    # :nocov:
     def index
       authorize @model
       index! { |format| format.json { render json: index_respond_json } }
@@ -149,5 +150,6 @@ module Resource
     def model_name
       @model.model_name.to_s.underscore
     end
+    # :nocov:
   end
 end
